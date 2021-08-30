@@ -3,7 +3,13 @@ new Vue({
     data: {
         modale: true,
     }, created() {
-        this.setCookie('modulo', 'visitato');
+        let cookie = this.getCookie('modulo');
+
+        if (cookie == 'visitato') {
+            this.modale = false;
+        }else {
+            this.modale = true;
+        }
     },
     mounted() {
     },
@@ -11,6 +17,7 @@ new Vue({
         closeModal: function() {
             let contModal = document.getElementById('modale');
             contModal.style.display = 'none';
+            this.setCookie('modulo', 'visitato');
 
         },
 

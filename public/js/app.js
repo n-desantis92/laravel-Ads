@@ -1889,13 +1889,20 @@ new Vue({
     modale: true
   },
   created: function created() {
-    this.setCookie('modulo', 'visitato');
+    var cookie = this.getCookie('modulo');
+
+    if (cookie == 'visitato') {
+      this.modale = false;
+    } else {
+      this.modale = true;
+    }
   },
   mounted: function mounted() {},
   methods: {
     closeModal: function closeModal() {
       var contModal = document.getElementById('modale');
       contModal.style.display = 'none';
+      this.setCookie('modulo', 'visitato');
     },
     setCookie: function setCookie(cname, cvalue, exdays) {
       var d = new Date();
