@@ -23,10 +23,10 @@
 @endsection
 
 @section('modale')
-        <div class="cont-modale">
+        <div v-if="modale" id="modale" class="cont-modale">
 
             <div class="modale">
-                <div class="close">
+                <div class="close" v-on:click="closeModal">
                     <i class="fas fa-times"></i>
                 </div>
                 <div class="header-mod">

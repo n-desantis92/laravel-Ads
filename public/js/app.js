@@ -1842,6 +1842,8 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./modale */ "./resources/js/modale.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -1872,6 +1874,27 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/modale.js":
+/*!********************************!*\
+  !*** ./resources/js/modale.js ***!
+  \********************************/
+/***/ (() => {
+
+new Vue({
+  el: '#modale',
+  data: {
+    modale: true
+  },
+  methods: {
+    closeModal: function closeModal() {
+      var contModal = document.getElementById('modale');
+      contModal.style.display = 'none';
+    }
+  }
+});
 
 /***/ }),
 
